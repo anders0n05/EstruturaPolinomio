@@ -3,13 +3,19 @@
 #include <iostream>
 using namespace std;
 
-struct Polinomio {
+struct Polinomio { /*ALTERACOES FUTURAS , MUDAR POLINOMIO PARA ELEMENTOSPOLINOMIOS*/
 	int coeficiente;
 	int expoente;
 	char referencia;
 
 };
+/*
+struct Polinomio{
+  apontamentos para o proximo
+  ElementosPolinomio elementos[] -> fazer com vetor dinamico.
+}
 
+*/
 const int MAX = 2;
 struct ListaEst {
 	Polinomio elementos[MAX];
@@ -76,6 +82,40 @@ void imprimirL_EST(ListaEst &l) {
 
 		cout << l.elementos[i].coeficiente << "-" << l.elementos[i].referencia << "-" << l.elementos[i].expoente << "\n";
 	}
+}
+Polinomio operacoes( Polinomio a,Polinomio b,int opcao) {
+	Polinomio temp;
+	switch (opcao) {
+	   case 1:
+		   if (a.expoente == b.expoente && a.referencia == a.referencia) {
+			   temp.coeficiente = a.coeficiente + b.coeficiente;
+			   return temp;
+		   }
+		break;
+	   case 2:
+		   if (a.expoente == b.expoente && a.referencia == a.referencia) {
+			   temp.coeficiente = a.coeficiente - b.coeficiente;
+			   return temp;
+		   }
+		   break;
+	   case 3:
+		   if (a.expoente == b.expoente && a.referencia == a.referencia) {
+			   temp.coeficiente = a.coeficiente * b.coeficiente;
+			   temp.expoente = a.expoente + b.expoente;
+			   return temp;
+		   }
+		   break;
+	   case 4:
+		   if (a.expoente == b.expoente && a.referencia == a.referencia) {
+			   temp.coeficiente = a.coeficiente / b.coeficiente;
+			   temp.expoente = a.expoente - b.expoente;
+			   return temp;
+		   }
+		   break;
+	   default: 
+		   cout << "Opcao invalida";
+	}
+
 }
 //falta fazer operacoes com os polinomios
 #endif // LISTA_ESTATICA_H_INCLUDED
