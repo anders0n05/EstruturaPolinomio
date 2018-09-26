@@ -1,4 +1,4 @@
-#ifndef INTERFACE_H
+﻿#ifndef INTERFACE_H
 #define INTERFACE_H
 #include "LISTA_ESTATICA.h"
 #include <iostream>
@@ -36,13 +36,13 @@ void recebePolinimio() {
 	imprimirL_EST(poli2);
 	cout << "Escolha um opcao" << endl;
 	cout << endl << endl;
-	cout << "====================================================";
-	cout << "||												   ||";
-	cout << "||             1 - Somar Polinomio				   ||";
-	cout << "||             2 - Diminuir Polinomio			   ||";
-	cout << "||             3 - Multiplicar Polinomio		   ||";
-	cout << "||             4 - Dividir Polinomio			   ||";
-	cout << "====================================================";
+	cout << "===================================================="<<endl;
+	cout << "||												   ||"<<endl;
+	cout << "||             1 - Somar Polinomio				   ||"<<endl;
+	cout << "||             2 - Diminuir Polinomio			   ||"<<endl;
+	cout << "||             3 - Multiplicar Polinomio		   ||"<<endl;
+	cout << "||             4 - Dividir Polinomio			   ||"<<endl;
+	cout << "===================================================="<<endl;
 	cout << endl << endl;
 	int opcao;
 	cin >> opcao;
