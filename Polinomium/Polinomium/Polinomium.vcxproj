@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="INTERFACE.h" />
     <ClInclude Include="LISTA_ESTATICA.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>

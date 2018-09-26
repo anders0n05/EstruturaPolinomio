@@ -4,9 +4,10 @@
 using namespace std;
 
 struct Polinomio {
-	int inteiroexp;
+	int coeficiente;
 	int expoente;
-	int inteiro;
+	char referencia;
+
 };
 
 const int MAX = 2;
@@ -73,7 +74,7 @@ bool removePosicaoL_EST(ListaEst &l, int pos) {
 void imprimirL_EST(ListaEst &l) {
 	for (int i = 0; i < l.qtd; i++) {
 
-		cout << l.elementos[i].inteiroexp << "-" << l.elementos[i].expoente << "-" << l.elementos[i].inteiro << "\n";
+		cout << l.elementos[i].coeficiente << "-" << l.elementos[i].referencia << "-" << l.elementos[i].expoente << "\n";
 	}
 }
 //falta fazer operacoes com os polinomios
