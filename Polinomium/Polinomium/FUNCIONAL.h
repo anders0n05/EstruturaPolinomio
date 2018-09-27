@@ -29,13 +29,13 @@ void inicializarL_EST(ListaEst &l) {
 }
 
 
-bool inserirInicioL_EST(ListaEst &l, Polinomio P) {
+bool inserirInicioL_EST(ListaEst &l, ElementoPolinomio P) {
 	Polinomio *novo = new Polinomio;
 	if (l.qtd !=0) { return false; }
 	novo->P = P;
 	novo->proximo = l.inicio;
 	l.inicio = novo;
-	l.qtd++;
+	
 	return true;
 
 	/*if (l.qtd == MAX) { return false; }
@@ -46,7 +46,7 @@ bool inserirInicioL_EST(ListaEst &l, Polinomio P) {
 	l.qtd++;
 	return true;*/
 }
-bool inserirFimL_EST(ListaEst &l, Polinomio P) {
+bool inserirFimL_EST(ListaEst &l, ElementoPolinomio P) {
 	Polinomio *novo = new Polinomio;
 	
 	if (l.inicio == NULL) { inserirInicioL_EST(l, P); }
@@ -57,7 +57,7 @@ bool inserirFimL_EST(ListaEst &l, Polinomio P) {
 		ultimo = ultimo->proximo;
 	}
 	ultimo->proximo = novo;
-	l.qtd++;
+	
 	return true;
 }
 

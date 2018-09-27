@@ -4,18 +4,18 @@
 #include <iostream>
 using namespace std;
 void imprimirL_EST(ListaEst &l) {
-	/*for (int i = 0; i < l.qtd; i++) {
+	for (int i = 0; i < l.qtd; i++) {
 
-		cout << l.elementos[i].coeficiente << "-" << l.elementos[i].referencia << "-" << l.elementos[i].expoente << "\n";
-	}*/
-	while (l.inicio != NULL) {
 		cout << "[ " << l.inicio->P.coeficiente << l.inicio->P.referencia << "^" << l.inicio->P.expoente<<"]";
-	}
+	}/*
+	while (l.inicio->proximo != NULL) {
+		cout << "[ " << l.inicio->P.coeficiente << l.inicio->P.referencia << "^" << l.inicio->P.expoente<<"]";
+	}*/
 }
 void recebePolinimio() {
 	int base1, expoente1, base2, expoente2;
 	char variavel1, variavel2;
-	Polinomio a, b;
+	ElementoPolinomio a, b;
 	ListaEst poli1, poli2;
 	inicializarL_EST(poli1);
 	inicializarL_EST(poli2);
@@ -30,10 +30,11 @@ void recebePolinimio() {
 		cout << "Variavel" << endl;
 		cin >> variavel1;
 		expoente1 = grau - i;
-		a.P.coeficiente = base1;
-		a.P.expoente = expoente1;
-		a.P.referencia = variavel1;
+		a.coeficiente = base1;
+		a.expoente = expoente1;
+		a.referencia = variavel1;
 		inserirFimL_EST(poli1, a);
+		poli1.qtd++;
 	}
 	cout << "Digite os dados do Segundo polinomio: \n";
 	cout << "Qual o grau do segundo Polinomio:" << endl;
@@ -47,10 +48,11 @@ void recebePolinimio() {
 		cout << "Variavel" << endl;
 		cin >> variavel2;
 		expoente2 = grau2 - i;
-		b.P.coeficiente = base2;
-		b.P.expoente = expoente2;
-		b.P.referencia = variavel2;
+		b.coeficiente = base2;
+		b.expoente = expoente2;
+		b.referencia = variavel2;
 		inserirFimL_EST(poli2, b);
+		poli2.qtd++;
 	}
 	cout << "Polinomio Inseridos" << endl;
 	imprimirL_EST(poli1);
