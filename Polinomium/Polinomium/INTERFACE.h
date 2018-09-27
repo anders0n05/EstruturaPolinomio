@@ -1,36 +1,57 @@
 ﻿#ifndef INTERFACE_H
 #define INTERFACE_H
-#include "LISTA_ESTATICA.h"
+#include "FUNCIONAL.h"
 #include <iostream>
 using namespace std;
-void recebePolinimio() {
-	int c, c2, d, d2;
-	char c1, d1;
-	
-	cout << "digite os dados do primeiro polinomio: \n";
+void imprimirL_EST(ListaEst &l) {
+	/*for (int i = 0; i < l.qtd; i++) {
 
-	cout << "Coeficiente a" << endl;
-	cin >> c;
-	cout << "Coenficiente b" << endl;
-	cin >> c1;
-	cout << "Coeficiente c" << endl;
-	cin>> c2;
-	cout << "digite os dados do segundo polinomio: \n";
-	cout << "Coeficiente a" << endl;
-	cin >> d;
-	cout << "Coenficiente b" << endl;
-	cin >> d1;
-	cout << "Coeficiente c" << endl;
-	cin >> d2;
-	
+		cout << l.elementos[i].coeficiente << "-" << l.elementos[i].referencia << "-" << l.elementos[i].expoente << "\n";
+	}*/
+	while (l.inicio != NULL) {
+		cout << "[ " << l.inicio->P.coeficiente << l.inicio->P.referencia << "^" << l.inicio->P.expoente<<"]";
+	}
+}
+void recebePolinimio() {
+	int base1, expoente1, base2, expoente2;
+	char variavel1, variavel2;
 	Polinomio a, b;
 	ListaEst poli1, poli2;
 	inicializarL_EST(poli1);
 	inicializarL_EST(poli2);
-	a.coeficiente = c, a.referencia = c1, a.expoente = c2;
-	inserirInicioL_EST(poli1, a);
-	b.coeficiente = d; b.referencia = d1, b.expoente = d2;
-	inserirFimL_EST(poli2, b);
+	cout << "Digite os dados do primeiro polinomio: \n";
+	cout << "Qual o grau do Polinomio:" << endl;
+	int grau;
+	cin >> grau;
+	for (int i = 0; i < grau; i++)
+	{
+		cout << "Base a" << endl;
+		cin >> base1;
+		cout << "Variavel" << endl;
+		cin >> variavel1;
+		expoente1 = grau - i;
+		a.P.coeficiente = base1;
+		a.P.expoente = expoente1;
+		a.P.referencia = variavel1;
+		inserirFimL_EST(poli1, a);
+	}
+	cout << "Digite os dados do Segundo polinomio: \n";
+	cout << "Qual o grau do segundo Polinomio:" << endl;
+	int grau2;
+	cin >> grau2;
+	cout << endl;
+	for (int i = 0; i < grau; i++)
+	{
+		cout << "Base a" << endl;
+		cin >> base2;
+		cout << "Variavel" << endl;
+		cin >> variavel2;
+		expoente2 = grau2 - i;
+		b.P.coeficiente = base2;
+		b.P.expoente = expoente2;
+		b.P.referencia = variavel2;
+		inserirFimL_EST(poli2, b);
+	}
 	cout << "Polinomio Inseridos" << endl;
 	imprimirL_EST(poli1);
 	imprimirL_EST(poli2);
