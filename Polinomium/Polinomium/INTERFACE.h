@@ -2,15 +2,23 @@
 #define INTERFACE_H
 #include "FUNCIONAL.h"
 #include <iostream>
-using namespace std;
-void imprimirL_EST(ListaEst &l) {
-	for (int i = 0; i < l.qtd; i++) {
+#include"OPERACOES_MATEMATICAS_POLINIMIOS.h"
 
-		cout << "[ " << l.inicio->P.coeficiente << l.inicio->P.referencia << "^" << l.inicio->P.expoente<<"]";
-	}/*
-	while (l.inicio->proximo != NULL) {
-		cout << "[ " << l.inicio->P.coeficiente << l.inicio->P.referncia << "^" << l.inicio->P.expoente<<"]";
-	}*/
+//=================================================================================
+
+using namespace std;
+void imprimirL_EST(ListaEst &l) {// imprime os polinomios
+	Polinomio *ultimo = l.inicio;
+	while (ultimo!= NULL) { //percorre ate nao ser nulo
+		if (ultimo->P.coeficiente == 0) {
+			cout << " ";
+		}
+		else {
+			cout << "[ " << ultimo->P.coeficiente << ultimo->P.referencia << "^" << ultimo->P.expoente << "]";
+			
+		}
+		ultimo = ultimo->proximo;
+	}
 }
 void recebePolinimio() {
 	int base1, expoente1, base2, expoente2;
@@ -23,7 +31,7 @@ void recebePolinimio() {
 	cout << "Qual o grau do Polinomio:" << endl;
 	int grau;
 	cin >> grau;
-	for (int i = 0; i < grau; i++)
+	for (int i = 0; i <= grau; i++)
 	{
 		cout << "Base a" << endl;
 		cin >> base1;
@@ -41,7 +49,7 @@ void recebePolinimio() {
 	int grau2;
 	cin >> grau2;
 	cout << endl;
-	for (int i = 0; i < grau; i++)
+	for (int i = 0; i <= grau2; i++)
 	{
 		cout << "Base a" << endl;
 		cin >> base2;
@@ -56,6 +64,7 @@ void recebePolinimio() {
 	}
 	cout << "Polinomio Inseridos" << endl;
 	imprimirL_EST(poli1);
+	cout << endl;
 	imprimirL_EST(poli2);
 	cout << "Escolha um opcao" << endl;
 	cout << endl << endl;

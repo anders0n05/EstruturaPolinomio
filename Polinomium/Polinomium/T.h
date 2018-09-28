@@ -1,17 +1,16 @@
 #ifndef FUNCIONAL_H_INCLUDED
 #define FUNCIONAL_H_INCLUDED
-
 #include <iostream>
 using namespace std;
 
-struct ElementoPolinomio { 
+struct ElementoPolinomio { /*ALTERACOES FUTURAS , MUDAR POLINOMIO PARA ELEMENTOSPOLINOMIOS*/
 	int coeficiente;
 	int expoente;
 	char referencia;
 
 };
 
-struct Polinomio {//Contem o conjunto de elementos do Polinomio
+struct Polinomio{
 	ElementoPolinomio P;
 	Polinomio *proximo;
 };
@@ -20,7 +19,7 @@ struct Polinomio {//Contem o conjunto de elementos do Polinomio
 
 struct ListaEst {
 	Polinomio *inicio;
-
+	
 	int qtd;
 };
 
@@ -32,29 +31,33 @@ void inicializarL_EST(ListaEst &l) {
 
 bool inserirInicioL_EST(ListaEst &l, ElementoPolinomio P) {
 	Polinomio *novo = new Polinomio;
-	if (l.qtd != 0) { return false; }
+	if (l.qtd !=0) { return false; }
 	novo->P = P;
 	novo->proximo = l.inicio;
 	l.inicio = novo;
-
+	
 	return true;
+
+	/*if (l.qtd == MAX) { return false; }
+	for (int i = l.qtd; i > 0; i--) {
+		l.elementos[i] = l.elementos[i - 1];
+	}
+	l.elementos[0] = c;
+	l.qtd++;
+	return true;*/
 }
 bool inserirFimL_EST(ListaEst &l, ElementoPolinomio P) {
 	Polinomio *novo = new Polinomio;
-
-	if (l.inicio == NULL) { 
-		
-		inserirInicioL_EST(l, P);
-		return false;
-	}
-	novo->P = P;
+	
+	if (l.inicio == NULL) { inserirInicioL_EST(l, P); }
+	novo -> P = P;
 	novo->proximo = NULL;
 	Polinomio *ultimo = l.inicio;
 	while (ultimo->proximo != NULL) {
 		ultimo = ultimo->proximo;
 	}
 	ultimo->proximo = novo;
-
+	
 	return true;
 }
 
@@ -92,5 +95,40 @@ bool inserirFimL_EST(ListaEst &l, ElementoPolinomio P) {
 //	return true;
 //}
 
-
+//
+//Polinomio operacoes( Polinomio a,Polinomio b,int opcao) {
+//	Polinomio temp;
+//	switch (opcao) {
+//	   case 1:
+//		   if (a.expoente == b.expoente && a.referencia == a.referencia) {
+//			   temp.coeficiente = a.coeficiente + b.coeficiente;
+//			   return temp;
+//		   }
+//		break;
+//	   case 2:
+//		   if (a.expoente == b.expoente && a.referencia == a.referencia) {
+//			   temp.coeficiente = a.coeficiente - b.coeficiente;
+//			   return temp;
+//		   }
+//		   break;
+//	   case 3:
+//		   if (a.expoente == b.expoente && a.referencia == a.referencia) {
+//			   temp.coeficiente = a.coeficiente * b.coeficiente;
+//			   temp.expoente = a.expoente + b.expoente;
+//			   return temp;
+//		   }
+//		   break;
+//	   case 4:
+//		   if (a.expoente == b.expoente && a.referencia == a.referencia) {
+//			   temp.coeficiente = a.coeficiente / b.coeficiente;
+//			   temp.expoente = a.expoente - b.expoente;
+//			   return temp;
+//		   }
+//		   break;
+//	   default: 
+//		   cout << "Opcao invalida";
+//	}
+//
+//}
+//falta fazer operacoes com os polinomios
 #endif // LISTA_ESTATICA_H_INCLUDED

@@ -18,10 +18,13 @@
     <ClInclude Include="pch.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="LISTA_ESTATICA.h">
+    <ClInclude Include="INTERFACE.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="INTERFACE.h">
+    <ClInclude Include="FUNCIONAL.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="OPERACOES_MATEMATICAS_POLINIMIOS.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
