@@ -9,7 +9,7 @@ void imprimirL_EST(ListaEst &l) {
 		cout << "[ " << l.inicio->P.coeficiente << l.inicio->P.referencia << "^" << l.inicio->P.expoente<<"]";
 	}/*
 	while (l.inicio->proximo != NULL) {
-		cout << "[ " << l.inicio->P.coeficiente << l.inicio->P.referencia << "^" << l.inicio->P.expoente<<"]";
+		cout << "[ " << l.inicio->P.coeficiente << l.inicio->P.referncia << "^" << l.inicio->P.expoente<<"]";
 	}*/
 }
 void recebePolinimio() {
