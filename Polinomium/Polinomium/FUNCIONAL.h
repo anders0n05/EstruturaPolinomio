@@ -39,6 +39,7 @@ bool inserirInicioL_EST(ListaEst &l, ElementoPolinomio P) {
 
 	return true;
 }
+
 bool inserirFimL_EST(ListaEst &l, ElementoPolinomio P) {
 	Polinomio *novo = new Polinomio;
 

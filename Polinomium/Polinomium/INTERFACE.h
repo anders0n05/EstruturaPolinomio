@@ -3,7 +3,7 @@
 #include "FUNCIONAL.h"
 #include <iostream>
 #include"OPERACOES_MATEMATICAS_POLINIMIOS.h"
-
+#include "pch.h"
 //=================================================================================
 
 using namespace std;
@@ -23,10 +23,12 @@ void imprimirL_EST(ListaEst &l) {// imprime os polinomios
 void recebePolinimio() {
 	int base1, expoente1, base2, expoente2;
 	char variavel1, variavel2;
-	ElementoPolinomio a, b;
-	ListaEst poli1, poli2;
+	ElementoPolinomio a, b, resultante;
+	ListaEst poli1, poli2, poliresultante;
+//	Polinomio *ultimo = poliresultante.inicio;
 	inicializarL_EST(poli1);
 	inicializarL_EST(poli2);
+	inicializarL_EST(poliresultante);
 	cout << "Digite os dados do primeiro polinomio: \n";
 	cout << "Qual o grau do Polinomio:" << endl;
 	int grau;
@@ -35,12 +37,21 @@ void recebePolinimio() {
 	{
 		cout << "Base a" << endl;
 		cin >> base1;
-		cout << "Variavel" << endl;
-		cin >> variavel1;
-		expoente1 = grau - i;
+		if (i == grau) {//caso seja grau 0 , nao tem variavel
+			a.referencia = ' ';
+		}
+		else {
+			cout << "Variavel" << endl;
+			cin >> variavel1;
+			a.referencia = variavel1;
+		}
 		a.coeficiente = base1;
+		 
+		
+		expoente1 = grau - i;
+		
 		a.expoente = expoente1;
-		a.referencia = variavel1;
+		
 		inserirFimL_EST(poli1, a);
 		poli1.qtd++;
 	}
@@ -53,12 +64,22 @@ void recebePolinimio() {
 	{
 		cout << "Base a" << endl;
 		cin >> base2;
-		cout << "Variavel" << endl;
-		cin >> variavel2;
-		expoente2 = grau2 - i;
+		if (i == grau2) {
+			b.referencia = ' ';
+		}
+		
+		else {
+			cout << "Variavel" << endl;
+			cin >> variavel2;
+			b.referencia = variavel2;
+		}
 		b.coeficiente = base2;
+		
+		
+		expoente2 = grau2 - i;
+		
 		b.expoente = expoente2;
-		b.referencia = variavel2;
+		
 		inserirFimL_EST(poli2, b);
 		poli2.qtd++;
 	}
@@ -66,6 +87,7 @@ void recebePolinimio() {
 	imprimirL_EST(poli1);
 	cout << endl;
 	imprimirL_EST(poli2);
+	cout << endl;
 	cout << "Escolha um opcao" << endl;
 	cout << endl << endl;
 	cout << "===================================================="<<endl;
@@ -78,8 +100,16 @@ void recebePolinimio() {
 	cout << endl << endl;
 	int opcao;
 	cin >> opcao;
-	imprimirL_EST(poli1);
-	imprimirL_EST(poli2);
+	cout << endl;
+	//inicializarL_EST(poliresultante);
+	poliresultante = operacoes(poli1, poli2, opcao,grau);
+	//resultante=operacoes(poli1, poli2, opcao);
+//	inserirInicioL_EST(poliresultante, resultante);
+	
+	imprimirL_EST(poliresultante);
+	cout << endl;
+	
+	
 	
 }
 
