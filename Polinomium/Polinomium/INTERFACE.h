@@ -101,11 +101,7 @@ void recebePolinimio() {
 	int opcao;
 	cin >> opcao;
 	cout << endl;
-	//inicializarL_EST(poliresultante);
 	poliresultante = operacoes(poli1, poli2, opcao,grau);
-	//resultante=operacoes(poli1, poli2, opcao);
-//	inserirInicioL_EST(poliresultante, resultante);
-	
 	imprimirL_EST(poliresultante);
 	cout << endl;
 	
