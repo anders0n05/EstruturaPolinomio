@@ -77,7 +77,7 @@ ListaEst operacoes(ListaEst &a, ListaEst &b, int opcao,int grau) {
 					  temp.expoente = a.inicio->P.expoente+b.inicio->P.expoente;
 					  temp.referencia = a.inicio->P.referencia;
 					  inserirFimL_EST(poliresultante, temp);
-					  if (a.inicio->proximo != NULL) { // Atualizando o ponteiro para fazer operacoess
+					  if (a.inicio->proximo != NULL) { // Atualizando o ponteiro para fazer operacoes
 						  a.inicio = a.inicio->proximo;
 						  b.inicio = b.inicio->proximo;
 					  }
